@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './courses/course.list.component';
-import { StarComponent } from './star/star.component';
-import { ReplacePipe } from './pipe/replace.pipe';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { StarComponent } from './shared/component/star/star.component';
+import { ReplacePipe } from './shared/pipe/replace.pipe';
+import { NavBarComponent } from './core/component/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
+import { Error404Component } from './core/component/error-404/error-404.component';
+import { CourseInfoComponent } from './courses/course-info.component';
 
 @NgModule({
   declarations: [
@@ -16,16 +18,24 @@ import { RouterModule } from '@angular/router';
     StarComponent,
     ReplacePipe,
     NavBarComponent,
+    Error404Component,
+    CourseInfoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       {
+        path: 'courses', component: CourseListComponent,
+      },
+      {
+        path: 'course/info', component: CourseInfoComponent,
+      },
+      {
         path: '', redirectTo: 'courses', pathMatch: 'full',
       },
       {
-        path: 'courses', component: CourseListComponent,
+        path: '**', component: Error404Component
       }
     ]),
   ],

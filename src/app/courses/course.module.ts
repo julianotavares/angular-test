@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReplacePipe } from '../shared/pipe/replace.pipe';
+import { StarComponent } from '../shared/component/star/star.component';
 
 @NgModule({
     declarations: [
         CourseListComponent,
         CourseInfoComponent,
         ReplacePipe,
+        StarComponent,
     ],
     imports: [
         CommonModule,

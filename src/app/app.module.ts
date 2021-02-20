@@ -10,6 +10,7 @@ import { NavBarComponent } from './core/component/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './core/component/error-404/error-404.component';
 import { CourseInfoComponent } from './courses/course-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CourseInfoComponent } from './courses/course-info.component';
     NavBarComponent,
     Error404Component,
     CourseInfoComponent,
+    HttpClientModule,
   ],
   imports: [
     BrowserModule,

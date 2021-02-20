@@ -22,7 +22,7 @@ export class CourseService {
     }
 
     save(course: Course): Observable<Course> {
-        if(course.id) {
+        if (course.id) {
             return this.httpClient.put<Course>(`${this.coursesUrl}/${course.id}`, course);
         } else {
             return this.httpClient.post<Course>(`${this.coursesUrl}`, course);
